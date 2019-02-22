@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Git Lab</title>
+	</head>
+	<body>
+
+		<div style="text-align:center;">
+
+			<font size = "10"><h1>Git Lab</h1></font>
+
+			<font size = "8">
+
+				Level one: <input type="text" id="k0">
+				<button onclick="md5hash(0)">Check</button>
+				<span id="a0" style="display: none">Correct!</span>
+				<br>
+				Level two: <input type="text" id="k1">
+				<button onclick="md5hash(1)">Check</button>
+				<span id="a1" style="display: none">Correct!</span>
+				<br>
+				Level three: <input type="text" id="k2">
+				<button onclick="md5hash(2)">Check</button>
+				<span id="a2" style="display: none">Correct!</span>
+			
+			</font>
+
+			<script type="text/javascript" src="js/md5.min.js" ></script>
+			<script type="text/javascript">
+				var ans = ['e451a684f5a764635d1ec68d5be334a5','c4b1a18a1f889ec3337b19dbc629fbee','10a6d36665187cd2c43a95305fb40131']
+				function md5hash(m){
+					var hash = md5(document.getElementById('k' + m).value);
+					var x = document.getElementById('a' + m);
+					if(hash == ans[m]){
+						x.style.display = "inline";
+					}
+					else{
+						x.style.display = "none";
+					}
+				}
+			</script>
+		</div>
+	</body>
+</html>
